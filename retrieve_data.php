@@ -11,8 +11,6 @@ try {
     // Create table if it doesn't exist
     $db->createTableIfNotExists();
 
-    // Test the key first
-    $keyTestResult = $encryption->testKey();
 
     // Retrieve encrypted data
     $users = $db->select('users');
@@ -56,15 +54,8 @@ try {
     </head>
     <body>
         <h1>Decrypted User Data</h1>
-        <p><a href='insert_data.php'>Insert More Data</a> | <a href='index.php'>Home</a> | <a href='test_key.php'>Test Key</a></p>";
+        <p><a href='insert_data.php'>Insert More Data</a> | <a href='index.php'>Home</a></p>";
 
-    // Show key status
-    if ($keyTestResult) {
-        echo "<div class='key-status key-valid'>✓ Encryption key is working correctly</div>";
-    } else {
-        echo "<div class='key-status key-invalid'>✗ Encryption key is NOT working. Data was encrypted with a different key.</div>";
-        echo "<p>Generate a new key using <a href='generate_key.php'>generate_key.php</a> and update your .env file.</p>";
-    }
 
     if (empty($users)) {
         echo "<p>No users found. <a href='insert_data.php'>Insert some data first</a>.</p>";
@@ -114,7 +105,7 @@ try {
         <h1>Error</h1>
         <div class='error'>" . htmlspecialchars($e->getMessage()) . "</div>
         <p>Check your encryption key in the .env file and make sure it matches the key used to encrypt the data.</p>
-        <p><a href='generate_key.php'>Generate a new key</a> | <a href='test_key.php'>Test current key</a></p>
+        <p><a href='generate_key.php'>Generate a new key</a></p>
     </body>
     </html>";
 }
