@@ -1,0 +1,12 @@
+{
+  "require": {
+    "defuse/php-encryption": "^2.4"
+  },
+  "autoload": {
+    "files": [
+      "config/database.php",
+      "includes/Database.php",
+      "includes/EncryptionService.php"
+    ]
+  }
+}
