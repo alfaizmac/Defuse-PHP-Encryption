@@ -22,11 +22,11 @@ class DatabaseConfig
         }
 
         return [
-            'host' => $config['DB_HOST'] ?? 'localhost',
-            'database' => $config['DB_NAME'] ?? 'testwebsite',
-            'username' => $config['DB_USER'] ?? 'root',
-            'password' => $config['DB_PASSWORD'] ?? 'alfaiz',
-            'encryption_key' => $config['ENCRYPTION_KEY'] ?? ''
+            'host' => $config['DB_HOST'],
+            'database' => $config['DB_NAME'],
+            'username' => $config['DB_USER'],
+            'password' => $config['DB_PASSWORD'],
+            'encryption_key' => $config['ENCRYPTION_KEY']
         ];
     }
 }
