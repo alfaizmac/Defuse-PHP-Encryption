@@ -10,7 +10,7 @@ This project demonstrates how to implement Defuse PHP Encryption for securing se
 composer require defuse/php-encryption
 ```
 
-2. Create Database Table
+2. Create Database Table (The table will automatically CREATED if you insert data)
 
 ```
 CREATE DATABASE IF NOT EXISTS Your_Database_Name;
